@@ -1,0 +1,22 @@
+import string
+
+def caesar_cipher(text, k):
+    alphabet = string.ascii_lowercase
+    result = ""
+
+    for char in text.lower():
+        if char in alphabet:
+            new_index = (alphabet.index(char) + k) % 26
+            result += alphabet[new_index]
+        else:
+            result += char 
+    return result
+
+print ("Moi nhap vao ten: ")
+plaintext = input()
+print("Moi nhap vao so thu tu: ")
+k = int(input())
+
+ciphertext = caesar_cipher(plaintext, k)
+print("Plaintext :", plaintext)
+print("Ciphertext:", ciphertext)
